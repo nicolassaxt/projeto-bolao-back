@@ -1,4 +1,4 @@
-package nicolassaxt.com.github.projetobolao.config;
+package nicolassaxt.com.github.projetobolao.config.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;

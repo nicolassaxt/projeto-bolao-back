@@ -34,6 +34,11 @@ public class UsuarioController {
         return  ResponseEntity.ok(result);
     }
 
+    @GetMapping("/managers") //rota teste admin
+    public String managers() {
+        return "Authorized manager";
+    }
+
     @GetMapping("/{id}")
     public ResponseEntity<UsuarioDTO> findById(@PathVariable String id){
         Usuario usuario = usuarioService.findById(id);

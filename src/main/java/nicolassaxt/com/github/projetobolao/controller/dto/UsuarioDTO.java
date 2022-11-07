@@ -3,15 +3,13 @@ package nicolassaxt.com.github.projetobolao.controller.dto;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
 import java.time.LocalDateTime;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UsuarioDTO {
 
     private String id;
-    private String user_name;
+    private String username;
     private String user_email;
     private String user_password;
     private String user_full_name;
@@ -26,12 +24,12 @@ public class UsuarioDTO {
         this.id = id;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getUser_email() {
