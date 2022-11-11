@@ -45,12 +45,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
                 .antMatchers(HttpMethod.POST,"/partida").permitAll() //rota liberada
                 .antMatchers(HttpMethod.GET,"/partida/**").permitAll() //rota liberada
-                .antMatchers(HttpMethod.PUT,"/partida/**").permitAll() //rota liberada
+                .antMatchers(HttpMethod.PUT,"/partida/**").hasAnyRole("USERS","MANAGERS")
                 .antMatchers(HttpMethod.DELETE,"/partida/**").permitAll() //rota liberada
 
                 .antMatchers(HttpMethod.POST,"/aposta").permitAll() //rota liberada
                 .antMatchers(HttpMethod.GET,"/aposta/**").permitAll() //rota liberada
-                .antMatchers(HttpMethod.PUT,"/aposta/**").permitAll() //rota liberada
+                .antMatchers(HttpMethod.PUT,"/aposta/**").hasAnyRole("USERS","MANAGERS")
                 .antMatchers(HttpMethod.DELETE,"/aposta/**").permitAll() //rota liberada
 
                 .antMatchers(HttpMethod.POST,"/login").permitAll() //rota liberada
