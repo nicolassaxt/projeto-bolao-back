@@ -8,7 +8,8 @@ import java.util.List;
 @Entity
 public class Usuario {
     @Id
-    private String id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
     @Column(unique = true)
     private String username;
     @Column(unique = true)
@@ -22,8 +23,7 @@ public class Usuario {
     @Column(name = "role_id")
     private List<String> roles = new ArrayList<>();
 
-    public Usuario(String id, String username, String user_email, String user_password, String user_full_name) {
-        this.id = id;
+    public Usuario( String username, String user_email, String user_password, String user_full_name) {
         this.username = username;
         this.user_email = user_email;
         this.user_password = user_password;
@@ -39,11 +39,20 @@ public class Usuario {
     }
 
 
-    public String getId() {
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

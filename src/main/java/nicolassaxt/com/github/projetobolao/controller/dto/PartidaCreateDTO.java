@@ -1,54 +1,50 @@
 package nicolassaxt.com.github.projetobolao.controller.dto;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import nicolassaxt.com.github.projetobolao.model.StatusPartida;
+import nicolassaxt.com.github.projetobolao.model.Time;
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.time.LocalDateTime;
 
 public class PartidaCreateDTO {
 
 
-    private LocalDateTime dataPartida;
+    private String dataPartida;
 
     //passar valor padrao
-    private String vitoriaTime1;
-
-    //passar valor padrao
-    private String vitoriaTime2;
-
-    //passar valor padrao
-    private String empate;
+    private StatusPartida status;
 
     private String imgUrlPartida;
 
-    public LocalDateTime getDataPartida() {
+    private Long timeAId;
+
+    private Long timeBId;
+
+//    public LocalDateTime getDataPartida() {
+//        return dataPartida;
+//    }
+//
+//    public void setDataPartida(LocalDateTime dataPartida) {
+//        this.dataPartida = dataPartida;
+//    }
+
+
+    public String getDataPartida() {
         return dataPartida;
     }
 
-    public void setDataPartida(LocalDateTime dataPartida) {
+    public void setDataPartida(String dataPartida) {
         this.dataPartida = dataPartida;
     }
 
-    public String getVitoriaTime1() {
-        return vitoriaTime1;
+    public StatusPartida getStatus() {
+        return status;
     }
 
-    public void setVitoriaTime1(String vitoriaTime1) {
-        this.vitoriaTime1 = vitoriaTime1;
-    }
-
-    public String getVitoriaTime2() {
-        return vitoriaTime2;
-    }
-
-    public void setVitoriaTime2(String vitoriaTime2) {
-        this.vitoriaTime2 = vitoriaTime2;
-    }
-
-    public String getEmpate() {
-        return empate;
-    }
-
-    public void setEmpate(String empate) {
-        this.empate = empate;
+    public void setStatus(StatusPartida status) {
+        this.status = status;
     }
 
     public String getImgUrlPartida() {
@@ -57,5 +53,21 @@ public class PartidaCreateDTO {
 
     public void setImgUrlPartida(String imgUrlPartida) {
         this.imgUrlPartida = imgUrlPartida;
+    }
+
+    public Long getTimeAId() {
+        return timeAId;
+    }
+
+    public void setTimeAId(Long timeAId) {
+        this.timeAId = timeAId;
+    }
+
+    public Long getTimeBId() {
+        return timeBId;
+    }
+
+    public void setTimeBId(Long timeBId) {
+        this.timeBId = timeBId;
     }
 }

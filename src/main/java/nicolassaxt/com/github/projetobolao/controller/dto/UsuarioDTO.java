@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class UsuarioDTO {
 
-    private String id;
+    private Long id;
     private String username;
     private String user_email;
     private String user_password;
@@ -16,11 +16,20 @@ public class UsuarioDTO {
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime user_join_date;
 
-    public String getId() {
+//    public String getId() {
+//        return id;
+//    }
+//
+//    public void setId(String id) {
+//        this.id = id;
+//    }
+
+
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

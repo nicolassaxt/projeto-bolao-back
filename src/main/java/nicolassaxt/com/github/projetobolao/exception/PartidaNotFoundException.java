@@ -4,9 +4,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 @ResponseStatus(code = HttpStatus.NOT_FOUND)
-public class UsuarioNotFoundException extends RuntimeException {
-
-    public UsuarioNotFoundException(Long id) {
-        super("Usuario not found with Id: " + id);
+public class PartidaNotFoundException extends RuntimeException {
+    public PartidaNotFoundException(Long id) {
+        super("Partida not found with Id: " + id);
     }
 }

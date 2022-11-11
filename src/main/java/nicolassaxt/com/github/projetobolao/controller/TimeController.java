@@ -35,14 +35,14 @@ public class TimeController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<TimeDTO> findById(@PathVariable String id){
+    public ResponseEntity<TimeDTO> findById(@PathVariable Long id){
         Time time = timeService.findById(id);
         TimeDTO result = timeMapper.toTimeDTO(time);
         return  ResponseEntity.ok(result); //retornando 200
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable Long id){
         timeService.delete(id);
         return  ResponseEntity.noContent().build(); //retornando 204
     }
@@ -56,7 +56,7 @@ public class TimeController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<TimeDTO> update(@PathVariable String id ,@RequestBody TimeDTO dto){
+    public ResponseEntity<TimeDTO> update(@PathVariable Long id ,@RequestBody TimeDTO dto){
         Time timeCreate = timeMapper.toTime(dto);
         Time time = timeService.update(id ,timeCreate);
         TimeDTO result = timeMapper.toTimeDTO(time);

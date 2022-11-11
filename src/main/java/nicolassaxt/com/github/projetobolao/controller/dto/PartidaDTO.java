@@ -1,6 +1,9 @@
 package nicolassaxt.com.github.projetobolao.controller.dto;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
+import nicolassaxt.com.github.projetobolao.model.StatusPartida;
+import nicolassaxt.com.github.projetobolao.model.Time;
+
 
 import java.time.LocalDateTime;
 
@@ -9,14 +12,12 @@ public class PartidaDTO {
     private String id;
     @JsonFormat(pattern = "dd/MM/yyyy HH:mm")
     private LocalDateTime dataPartida;
-
-    private String vitoriaTime1;
-
-    private String vitoriaTime2;
-
-    private String empate;
-
+    private StatusPartida status;
     private String imgUrlPartida;
+
+    private Time timeAId;
+
+    private Time timeBId;
 
     public String getId() {
         return id;
@@ -34,28 +35,12 @@ public class PartidaDTO {
         this.dataPartida = dataPartida;
     }
 
-    public String getVitoriaTime1() {
-        return vitoriaTime1;
+    public StatusPartida getStatus() {
+        return status;
     }
 
-    public void setVitoriaTime1(String vitoriaTime1) {
-        this.vitoriaTime1 = vitoriaTime1;
-    }
-
-    public String getVitoriaTime2() {
-        return vitoriaTime2;
-    }
-
-    public void setVitoriaTime2(String vitoriaTime2) {
-        this.vitoriaTime2 = vitoriaTime2;
-    }
-
-    public String getEmpate() {
-        return empate;
-    }
-
-    public void setEmpate(String empate) {
-        this.empate = empate;
+    public void setStatus(StatusPartida status) {
+        this.status = status;
     }
 
     public String getImgUrlPartida() {
@@ -64,5 +49,21 @@ public class PartidaDTO {
 
     public void setImgUrlPartida(String imgUrlPartida) {
         this.imgUrlPartida = imgUrlPartida;
+    }
+
+    public Time getTimeAId() {
+        return timeAId;
+    }
+
+    public void setTimeAId(Time timeAId) {
+        this.timeAId = timeAId;
+    }
+
+    public Time getTimeBId() {
+        return timeBId;
+    }
+
+    public void setTimeBId(Time timeBId) {
+        this.timeBId = timeBId;
     }
 }

@@ -40,14 +40,14 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> findById(@PathVariable String id){
+    public ResponseEntity<UsuarioDTO> findById(@PathVariable Long id){
         Usuario usuario = usuarioService.findById(id);
         UsuarioDTO result = usuarioMapper.toUsuarioDTO(usuario);
         return  ResponseEntity.ok(result); //retornando 200
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity delete(@PathVariable String id){
+    public ResponseEntity delete(@PathVariable Long id){
         usuarioService.delete(id);
         return  ResponseEntity.noContent().build(); //retornando 204
     }
@@ -61,7 +61,7 @@ public class UsuarioController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> update(@PathVariable String id ,@RequestBody UsuarioCreateDTO dto){
+    public ResponseEntity<UsuarioDTO> update(@PathVariable Long id ,@RequestBody UsuarioCreateDTO dto){
         Usuario usuarioCreate = usuarioMapper.toUsuarioCreate(dto);
         Usuario usuario = usuarioService.update(id ,usuarioCreate);
         UsuarioDTO result = usuarioMapper.toUsuarioDTO(usuario);

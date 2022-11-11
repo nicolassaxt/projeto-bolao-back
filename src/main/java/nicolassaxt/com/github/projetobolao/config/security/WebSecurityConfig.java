@@ -42,10 +42,23 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.GET,"/time/**").permitAll() //rota liberada
                 .antMatchers(HttpMethod.PUT,"/time/**").permitAll() //rota liberada
                 .antMatchers(HttpMethod.DELETE,"/time/**").permitAll() //rota liberada
+
+                .antMatchers(HttpMethod.POST,"/partida").permitAll() //rota liberada
+                .antMatchers(HttpMethod.GET,"/partida/**").permitAll() //rota liberada
+                .antMatchers(HttpMethod.PUT,"/partida/**").permitAll() //rota liberada
+                .antMatchers(HttpMethod.DELETE,"/partida/**").permitAll() //rota liberada
+
+                .antMatchers(HttpMethod.POST,"/aposta").permitAll() //rota liberada
+                .antMatchers(HttpMethod.GET,"/aposta/**").permitAll() //rota liberada
+                .antMatchers(HttpMethod.PUT,"/aposta/**").permitAll() //rota liberada
+                .antMatchers(HttpMethod.DELETE,"/aposta/**").permitAll() //rota liberada
+
                 .antMatchers(HttpMethod.POST,"/login").permitAll() //rota liberada
+
                 .antMatchers(HttpMethod.POST,"/user").permitAll() //rota liberada
                 .antMatchers(HttpMethod.GET,"/user/**").permitAll()//rota liberada
-
+                .antMatchers(HttpMethod.PUT,"/user/**").permitAll()//rota liberada
+                .antMatchers(HttpMethod.DELETE,"/user/**").permitAll()//rota liberada
                // .antMatchers(HttpMethod.GET,"/user").hasAnyRole("USERS","MANAGERS") //para users e admins
                 .antMatchers("/managers").hasAnyRole("MANAGERS") //apenas para admins exemplo
                 .anyRequest().authenticated()

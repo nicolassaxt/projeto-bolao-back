@@ -37,15 +37,13 @@ public class UsuarioService {
     } //Gerando ID randomico
 
     @Transactional(readOnly = true)
-    public Usuario findById(String id) {
+    public Usuario findById(Long id) {
        return usuarioRepository.findById(id).orElseThrow(() ->
                new UsuarioNotFoundException(id)); //criar notfound para os outros atributos
 
     }
     @Transactional
     public Usuario create(Usuario usuarioCreate) {
-        String uuid = getUUID();
-        usuarioCreate.setId(uuid);
         usuarioCreate.setUser_join_date(LocalDateTime.now());
         String pass = usuarioCreate.getUser_password();
         //criptografando antes de salvar no banco
@@ -54,13 +52,13 @@ public class UsuarioService {
         return usuarioCreate;
     }
     @Transactional
-    public void delete(String id) {
+    public void delete(Long id) {
         findById(id);
         usuarioRepository.deleteById(id);
     }
 
     @Transactional
-    public Usuario update(String id, Usuario usuarioCreate) {
+    public Usuario update(Long id, Usuario usuarioCreate) {
         Usuario usuario = findById(id);
         usuario.setUsername(usuarioCreate.getUsername()); //alterando o user name
         usuario.setUser_full_name(usuarioCreate.getUser_full_name());//alterar o nome completo

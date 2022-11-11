@@ -31,26 +31,24 @@ public class TimeService {
     } //Gerando ID randomico
 
     @Transactional(readOnly = true)
-    public Time findById(String id) {
+    public Time findById(Long id) {
         return timeRepository.findById(id).orElseThrow(() ->
                 new TimeNotFoundException(id)); //criar notfound para os outros atributos
 
     }
     @Transactional
     public Time create(Time timeCreate) {
-        String uuid = getUUID();
-        timeCreate.setId(uuid);
         timeRepository.save(timeCreate);
         return timeCreate;
     }
     @Transactional
-    public void delete(String id) {
+    public void delete(Long id) {
         findById(id);
         timeRepository.deleteById(id);
     }
 
     @Transactional
-    public Time update(String id, Time timeCreate) {
+    public Time update(Long id, Time timeCreate) {
         Time time = findById(id);
         time.setNomeTime(timeCreate.getNomeTime()); //alterando o nome do time
         time.setImgUrlTime(timeCreate.getImgUrlTime());//alterar a url do time
